@@ -1,7 +1,14 @@
 set number
 syntax on
 colorscheme gruvbox
+set background=dark
 
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set backspace=indent,eol,start
+
+" Vundle config
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -13,22 +20,35 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-endwise'
 Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'tpope/vim-fugitive'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+" Airline config
 let g:airline_powerline_fonts = 1
 set laststatus=2
+
+" Share clipboard
+set clipboard=unnamed
+
+" Highlight search results
+set hlsearch
+
+" NERDTREE config
+" Auto open when Vim opens
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Map CTRL+E to open NERDTREE
+map <C-e> :NERDTreeToggle<CR>
+
+" sets leader to be comma
+let mapleader=","
+
+" insert pry
+map <leader>ip orequire 'pry';binding.pry<CR><Esc>
