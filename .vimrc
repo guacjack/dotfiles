@@ -3,13 +3,16 @@ set number
 syntax on
 colorscheme gruvbox 
 set hlsearch                   " Highlight search results
+set background=dark
+set cursorline                 " Highlight line number
 
 " Behavioral
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set backspace=indent,eol,start "Backspace work normal
-set clipboard=unnamed          "Share clipboard
+set backspace=indent,eol,start " Backspace work normal
+set clipboard=unnamed          " Share clipboard
+set directory=/tmp             " Set swap directly to not clutter workspace files
 
 " Vundle config
 set nocompatible               " be iMproved, required
@@ -31,6 +34,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'slim-template/vim-slim'
 Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'airblade/vim-gitgutter'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -39,6 +44,7 @@ filetype plugin indent on    " required
 let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t' "Show just filename in buffer
 
 " NERDTREE config
 " Auto open when Vim opens
@@ -52,3 +58,8 @@ let mapleader=","
 
 " insert pry
 map <leader>ip orequire 'pry';binding.pry<CR><Esc>
+
+" Syntastic
+let g:syntastic_ruby_checkers=['mri', 'rubocop']
+set statusline+=%#warningmsg#
+let g:syntastic_quiet_messages={} " Show warnings for Rubocop
