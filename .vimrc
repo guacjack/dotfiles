@@ -1,18 +1,31 @@
 " Visual
 set number
 syntax on
-colorscheme gruvbox 
-set hlsearch                   " Highlight search results
 set background=dark
-set cursorline                 " Highlight line number
+colorscheme gruvbox
+set cursorline                    " Highlight line number
+
+" Search
+set hlsearch    " Highlight matches
+set incsearch   " Incremental searching
+set ignorecase  " Searches are case insensitive...
+set smartcase   " ... unless they contain at least one capital letter
+
+" Tabs and white spaces
+set nowrap                        " Don't wrap lines
+set tabstop=2                     " Tabs are always 2 spaces
+set expandtab                     " Expand tabs into spaces
+set shiftwidth=2                  " Reindent with 2 spaces (using <<)
+set list                          " Show invisible chars
+set listchars=""                  " Reset listchars
+set list listchars=tab:»·,trail:· " Set listchars for tabs and trailing spaces
 
 " Behavioral
-set expandtab
-set shiftwidth=2
-set softtabstop=2
 set backspace=indent,eol,start " Backspace work normal
 set clipboard=unnamed          " Share clipboard
 set directory=/tmp             " Set swap directly to not clutter workspace files
+set autoread                   " Auto-reload buffers when file changed on disk
+set noswapfile                 " Don't use swap files (.swp)
 
 " Vundle config
 set nocompatible               " be iMproved, required
@@ -21,8 +34,6 @@ filetype off                   " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
