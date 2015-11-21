@@ -38,15 +38,21 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-endwise'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
-Plugin 'slim-template/vim-slim'
 Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
+
+" Javascript
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'pangloss/vim-javascript'
+
+"Ruby
+Plugin 'tpope/vim-endwise'
+Plugin 'slim-template/vim-slim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
