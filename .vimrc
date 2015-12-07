@@ -19,7 +19,8 @@ set shiftwidth=2                  " Reindent with 2 spaces (using <<)
 set list                          " Show invisible chars
 set listchars=""                  " Reset listchars
 set list listchars=tab:»·,trail:· " Set listchars for tabs and trailing spaces
-
+set smartindent                   " indents correctly (most of the time)
+"
 " Behavioral
 set backspace=indent,eol,start " Backspace work normal
 set clipboard=unnamed          " Share clipboard
@@ -69,6 +70,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Map CTRL+E to open NERDTREE
 map <C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1 "Show hidden files by default
 
 " sets leader to be comma
 let mapleader=","
