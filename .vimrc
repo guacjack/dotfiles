@@ -45,10 +45,12 @@ Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-sleuth'
 
 " Javascript
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 "Ruby
 Plugin 'tpope/vim-endwise'
@@ -82,3 +84,7 @@ map <leader>ip orequire 'pry';binding.pry<CR><Esc>
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
 set statusline+=%#warningmsg#
 let g:syntastic_quiet_messages={} " Show warnings for Rubocop
+
+" CtrlP
+" Ignore following directories in fuzzy search
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
