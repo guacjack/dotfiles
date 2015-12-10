@@ -46,6 +46,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-sleuth'
+Plugin 'Raimondi/delimitMate'
 
 " Javascript
 Plugin 'mustache/vim-mustache-handlebars'
