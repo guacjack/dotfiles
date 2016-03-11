@@ -1,0 +1,12 @@
+"*":
+  core: {}
+  editor:
+    fontSize: 15
+    invisibles: {}
+  "exception-reporting":
+    userId: "cf3c9939-a581-8d95-c18e-25f70f62728e"
+  pigments: {}
+  tabs:
+    usePreviewTabs: true
+  welcome:
+    showOnStartup: false
